@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumière Lounge | Luxury Cinema</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Intro Animation: Cinema Curtains -->
+  <div id="intro-animation">
+    <!-- Dark stage behind the curtains -->
+    <div class="curtain-stage">
+      <span class="curtain-stage-title">Lumière Lounge</span>
+    </div>
+    <!-- Left curtain -->
+    <div class="curtain curtain-left"></div>
+    <!-- Right curtain -->
+    <div class="curtain curtain-right"></div>
+  </div>
+
+  <div id="cursor-glow"></div>
+  <div id="confetti-container"></div>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo" onclick="app.navigate('home')">Lumière</a>
+      <button class="mobile-toggle" id="mobile-toggle">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#" onclick="app.navigate('home')">Movies</a>
+        <a href="#" onclick="app.navigate('dining')">Dining</a>
+        <a href="#" onclick="app.navigate('events')">Private Events</a>
+        <a href="#" onclick="app.navigate('dashboard')">Dashboard</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME VIEW -->
+  <section id="home-view" class="view active">
+    <div class="hero">
+      <div class="hero-bg" id="hero-parallax"></div>
+      <div class="hero-overlay"></div>
+      <div class="particles"></div>
+      <p class="hero-subtitle">A Five-Star Cinematic Experience</p>
+    </div>
+
+    <div class="container movies-section">
+      <h2 class="section-title">Now in Cinema</h2>
+      <div class="movies-scroll" id="now-showing-list">
+        <!-- Movies populated by JS -->
+      </div>
+    </div>
+    
+    <div class="container movies-section" style="padding-top:0;">
+      <h2 class="section-title">Coming Soon</h2>
+      <div class="movies-scroll" id="coming-soon-list">
+        <!-- Movies populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- MOVIE DETAIL VIEW -->
+  <section id="detail-view" class="view">
+    <div class="detail-banner" id="detail-banner-bg">
+      <div class="detail-overlay">
+        <div class="container detail-content">
+          <img src="" alt="Poster" class="detail-poster" id="detail-poster-img">
+          <div class="detail-info">
+            <h1 class="detail-title" id="detail-title"></h1>
+            <div class="detail-meta">
+              <span><i class="fas fa-clock"></i> <span id="detail-runtime"></span></span>
+              <span class="meta-sep">|</span>
+              <span><i class="fas fa-film"></i> <span id="detail-genre"></span></span>
+              <span class="meta-sep">|</span>
+              <span><i class="fas fa-star"></i> <span id="detail-rating"></span></span>
+            </div>
+            <p class="detail-synopsis" id="detail-synopsis"></p>
+            <div class="movie-credits">
+              <div class="credit-item" id="detail-director"></div>
+              <div class="credit-item" id="detail-writer"></div>
+              <div class="credit-item" id="detail-cast"></div>
+              <div class="credit-item" id="detail-release" style="margin-top: 16px; font-weight: 600; color: var(--accent-gold);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sticky-book-bar">
+      <div class="container" style="display:flex; justify-content:flex-end; gap: 20px; width:100%;">
+        <button class="btn-outline" onclick="alert('Trailer loading...')"><i class="fas fa-play" style="margin-right:8px;"></i> Watch Trailer</button>
+        <button class="btn-primary" id="book-now-btn" onclick="app.navigate('seats')">Select Seats <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEAT MAP VIEW -->
+  <section id="seats-view" class="view">
+    <div class="container seat-selection-container">
+      <div class="screen-area">
+        <div class="screen-curve"></div>
+        <div class="seat-grid" id="seat-grid">
+          <!-- Seats populated by JS -->
+        </div>
+        <div class="seat-legend">
+          <div class="legend-item"><div class="legend-box avail"></div> Available</div>
+          <div class="legend-item"><div class="legend-box sel"></div> Selected</div>
+          <div class="legend-item"><div class="legend-box tak"></div> Taken</div>
+        </div>
+      </div>
+      <div class="booking-summary-sidebar">
+        <h3 class="summary-movie" id="summary-movie-title">Movie Title</h3>
+        <div class="summary-row">
+          <span>Tickets (<span id="summary-count">0</span>)</span>
+          <span class="gold-text">$<span id="summary-tickets-price">0.00</span></span>
+        </div>
+        <div class="summary-row">
+          <span>Service Fee</span>
+          <span class="gold-text">$5.00</span>
+        </div>
+        <div class="summary-total">
+          <span>Total</span>
+          <span>$<span id="summary-total-price">0.00</span></span>
+        </div>
+        <button class="btn-gold" style="width:100%; margin-top:24px;" onclick="app.navigate('checkout')" id="proceed-checkout-btn" disabled>Proceed to Checkout</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKOUT VIEW -->
+  <section id="checkout-view" class="view">
+    <div class="container checkout-container">
+      <h2 class="section-title">Guest Details</h2>
+      <form id="checkout-form" onsubmit="app.processBooking(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" required placeholder="John">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" required placeholder="Doe">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-control" required placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+          <label>Card Number (Simulation)</label>
+          <input type="text" class="form-control" required placeholder="**** **** **** 4242">
+        </div>
+        <div class="summary-total" style="margin-bottom: 32px;">
+          <span>Amount Due</span>
+          <span>$<span id="checkout-total-price">0.00</span></span>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;">Confirm Booking</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- TICKET VIEW -->
+  <section id="ticket-view" class="view">
+    <div class="container ticket-container">
+      <div class="ticket">
+        <div class="ticket-header">
+          <h2 class="logo" style="font-size:24px; animation:none; text-shadow:none; color:var(--bg-primary);">Lumière Lounge</h2>
+        </div>
+        <div class="ticket-body">
+          <div class="ticket-dashed-line"></div>
+          <p style="text-transform:uppercase; font-size:12px; color:#666; margin-top:16px;">Admit One</p>
+          <h3 class="ticket-movie" id="ticket-movie-title">Movie Title</h3>
+          
+          <div class="ticket-details">
+            <div class="td-item">
+              <label>Date</label>
+              <span>Today, 8:00 PM</span>
+            </div>
+            <div class="td-item">
+              <label>Screen</label>
+              <span>VIP Lounge 1</span>
+            </div>
+            <div class="td-item">
+              <label>Seats</label>
+              <span id="ticket-seats">A1, A2</span>
+            </div>
+            <div class="td-item">
+              <label>Booking Ref</label>
+              <span id="ticket-ref">LL-8472</span>
+            </div>
+          </div>
+          
+          <div class="qr-code"></div>
+        </div>
+        <button class="wallet-btn"><i class="fab fa-apple"></i> Add to Apple Wallet</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DINING VIEW -->
+  <section id="dining-view" class="view">
+    <div class="container simple-view">
+      <div>
+        <h2 class="logo" style="animation:none; text-shadow:none; font-size: 64px;">Five-Star Dining</h2>
+        <p>Savor gourmet dishes crafted by world-renowned chefs, delivered directly to your plush cinema seat. Our seasonal menu features exquisite culinary creations designed to perfectly complement your movie experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVATE EVENTS VIEW -->
+  <section id="events-view" class="view">
+    <div class="container simple-view">
+      <div>
+        <h2 class="logo" style="animation:none; text-shadow:none; font-size: 64px;">Private Screenings</h2>
+        <p>Host the ultimate VIP event. Rent an entire theater for exclusive movie premieres, corporate presentations, or private gaming sessions on our massive silver screens.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD VIEW -->
+  <section id="dashboard-view" class="view">
+    <div class="container simple-view">
+      <div>
+        <h2 class="logo" style="animation:none; text-shadow:none; font-size: 64px;">Your Account</h2>
+        <p>View your upcoming reservations, past bookings, and manage your preferred payment methods. Sign in to access your Lumière Black Card benefits.</p>
+        <button class="btn-primary" style="margin-top:32px;">Sign In</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
