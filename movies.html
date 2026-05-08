@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies | Lumière Lounge</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Fredoka:wght@400;600&family=Orbitron:wght@400;700&family=Staatliches&family=Syne+Tactile&display=swap" rel="stylesheet">
+</head>
+<body id="movies-page-body">
+  
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Lumière</a>
+      <button class="mobile-toggle" id="mobile-toggle">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="movies.html" class="active">Movies</a>
+        <a href="dining.html">Dining</a>
+        <a href="index.html#events">Private Events</a>
+        <a href="index.html#dashboard">Dashboard</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOVIES EXPLORE PAGE -->
+  <main class="movies-page-wrapper">
+    <section id="movies-explore-section">
+      <div class="movies-explore-header">
+        <div class="container">
+          <h1 class="explore-title">Explore Cinema</h1>
+          <div class="category-filters" id="category-filters">
+            <button class="filter-btn active" data-category="All">All</button>
+            <button class="filter-btn" data-category="Drama">Drama</button>
+            <button class="filter-btn" data-category="Comedy">Comedy</button>
+            <button class="filter-btn" data-category="Romance">Romantic</button>
+            <button class="filter-btn" data-category="Sci-Fi">Sci-Fi</button>
+            <button class="filter-btn" data-category="Adventure">Adventures</button>
+            <button class="filter-btn" data-category="Thriller">Thriller</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="container">
+        <div class="movies-grid" id="explore-movies-list">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Detail Modal (Shared logic) -->
+  <section id="detail-view" class="view">
+    <div class="detail-banner" id="detail-banner-bg">
+      <div class="detail-overlay">
+        <div class="container detail-content">
+          <img src="" alt="Poster" class="detail-poster" id="detail-poster-img">
+          <div class="detail-info">
+            <h1 class="detail-title" id="detail-title"></h1>
+            <div class="detail-meta">
+              <span><i class="fas fa-clock"></i> <span id="detail-runtime"></span></span>
+              <span class="meta-sep">|</span>
+              <span><i class="fas fa-film"></i> <span id="detail-genre"></span></span>
+              <span class="meta-sep">|</span>
+              <span><i class="fas fa-star"></i> <span id="detail-rating"></span></span>
+            </div>
+            <p class="detail-synopsis" id="detail-synopsis"></p>
+            <div class="movie-credits">
+              <div class="credit-item" id="detail-director"></div>
+              <div class="credit-item" id="detail-writer"></div>
+              <div class="credit-item" id="detail-cast"></div>
+              <div class="credit-item" id="detail-release" style="margin-top: 16px; font-weight: 600; color: var(--accent-gold);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sticky-book-bar">
+      <div class="container" style="display:flex; justify-content:flex-end; gap: 20px; width:100%;">
+        <button class="btn-outline" onclick="alert('Trailer loading...')"><i class="fas fa-play" style="margin-right:8px;"></i> Watch Trailer</button>
+        <button class="btn-primary" id="book-now-btn">Select Seats <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
+      </div>
+    </div>
+    <button class="close-detail" onclick="moviesApp.closeDetail()"><i class="fas fa-times"></i></button>
+  </section>
+
+  <script src="js/data.js"></script>
+  <script src="js/movies.js"></script>
+</body>
+</html>

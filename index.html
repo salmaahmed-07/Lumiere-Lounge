@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
   <!-- Intro Animation: Cinema Curtains -->
@@ -21,7 +23,6 @@
     <div class="curtain curtain-right"></div>
   </div>
 
-  <div id="cursor-glow"></div>
   <div id="confetti-container"></div>
 
   <!-- Navbar -->
@@ -32,8 +33,8 @@
         <span></span><span></span><span></span>
       </button>
       <div class="nav-links" id="nav-links">
-        <a href="#" onclick="app.navigate('home')">Movies</a>
-        <a href="#" onclick="app.navigate('dining')">Dining</a>
+        <a href="movies.html">Movies</a>
+        <a href="dining.html">Dining</a>
         <a href="#" onclick="app.navigate('events')">Private Events</a>
         <a href="#" onclick="app.navigate('dashboard')">Dashboard</a>
       </div>
@@ -55,7 +56,44 @@
         <!-- Movies populated by JS -->
       </div>
     </div>
-    
+
+    <!-- EXPERIENCES SECTION -->
+    <div class="container experiences-section">
+      <h2 class="section-title">Cinematic Experiences</h2>
+      <div class="experiences-grid">
+        <div class="experience-block">
+          <img src="imgs/Standard.webp" alt="Standard Experience">
+          <div class="experience-overlay">
+            <h3>Standard</h3>
+            <p>Our standard seating experience offers comfortable, regularly sized movie seats positioned in our
+              top-notch cinema halls. Delivering exceptionally clear and vibrant visuals. Additionally, our
+              state-of-the-art sound systems provide dynamic audio immersion, ensuring a truly captivating and immersive
+              movie-watching experience.</p>
+          </div>
+        </div>
+        <div class="experience-block">
+          <img src="imgs/Premiere.avif" alt="Premiere Experience">
+          <div class="experience-overlay">
+            <h3>Premiere</h3>
+            <p>Indulge in our Premiere experience, featuring ultra-luxurious, fully-reclining leather seats with extra
+              legroom for the ultimate comfort. Enjoy personalized seat-side service and a curated menu of gourmet
+              snacks and beverages, all while being enveloped in our most advanced Dolby Atmos sound stage and
+              crystal-clear laser projection.</p>
+          </div>
+        </div>
+        <div class="experience-block">
+          <img src="imgs/Private.avif" alt="Private Experience">
+          <div class="experience-overlay">
+            <h3>Private</h3>
+            <p>Experience the pinnacle of cinematic exclusivity with our Private screening rooms. Designed for intimate
+              gatherings or celebratory events, this suite offers bespoke concierge service, a private lounge area, and
+              fully customizable viewing options. It’s not just a movie; it’s a tailored, ultra-private sanctuary for
+              you and your guests.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container movies-section" style="padding-top:0;">
       <h2 class="section-title">Coming Soon</h2>
       <div class="movies-scroll" id="coming-soon-list">
@@ -84,7 +122,8 @@
               <div class="credit-item" id="detail-director"></div>
               <div class="credit-item" id="detail-writer"></div>
               <div class="credit-item" id="detail-cast"></div>
-              <div class="credit-item" id="detail-release" style="margin-top: 16px; font-weight: 600; color: var(--accent-gold);"></div>
+              <div class="credit-item" id="detail-release"
+                style="margin-top: 16px; font-weight: 600; color: var(--accent-gold);"></div>
             </div>
           </div>
         </div>
@@ -92,8 +131,10 @@
     </div>
     <div class="sticky-book-bar">
       <div class="container" style="display:flex; justify-content:flex-end; gap: 20px; width:100%;">
-        <button class="btn-outline" onclick="alert('Trailer loading...')"><i class="fas fa-play" style="margin-right:8px;"></i> Watch Trailer</button>
-        <button class="btn-primary" id="book-now-btn" onclick="app.navigate('seats')">Select Seats <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
+        <button class="btn-outline" onclick="alert('Trailer loading...')"><i class="fas fa-play"
+            style="margin-right:8px;"></i> Watch Trailer</button>
+        <button class="btn-primary" id="book-now-btn" onclick="app.navigate('seats')">Select Seats <i
+            class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
       </div>
     </div>
   </section>
@@ -107,9 +148,15 @@
           <!-- Seats populated by JS -->
         </div>
         <div class="seat-legend">
-          <div class="legend-item"><div class="legend-box avail"></div> Available</div>
-          <div class="legend-item"><div class="legend-box sel"></div> Selected</div>
-          <div class="legend-item"><div class="legend-box tak"></div> Taken</div>
+          <div class="legend-item">
+            <div class="legend-box avail"></div> Available
+          </div>
+          <div class="legend-item">
+            <div class="legend-box sel"></div> Selected
+          </div>
+          <div class="legend-item">
+            <div class="legend-box tak"></div> Taken
+          </div>
         </div>
       </div>
       <div class="booking-summary-sidebar">
@@ -126,7 +173,8 @@
           <span>Total</span>
           <span>$<span id="summary-total-price">0.00</span></span>
         </div>
-        <button class="btn-gold" style="width:100%; margin-top:24px;" onclick="app.navigate('checkout')" id="proceed-checkout-btn" disabled>Proceed to Checkout</button>
+        <button class="btn-gold" style="width:100%; margin-top:24px;" onclick="app.navigate('checkout')"
+          id="proceed-checkout-btn" disabled>Proceed to Checkout</button>
       </div>
     </div>
   </section>
@@ -168,13 +216,14 @@
     <div class="container ticket-container">
       <div class="ticket">
         <div class="ticket-header">
-          <h2 class="logo" style="font-size:24px; animation:none; text-shadow:none; color:var(--bg-primary);">Lumière Lounge</h2>
+          <h2 class="logo" style="font-size:24px; animation:none; text-shadow:none; color:var(--bg-primary);">Lumière
+            Lounge</h2>
         </div>
         <div class="ticket-body">
           <div class="ticket-dashed-line"></div>
           <p style="text-transform:uppercase; font-size:12px; color:#666; margin-top:16px;">Admit One</p>
           <h3 class="ticket-movie" id="ticket-movie-title">Movie Title</h3>
-          
+
           <div class="ticket-details">
             <div class="td-item">
               <label>Date</label>
@@ -193,7 +242,7 @@
               <span id="ticket-ref">LL-8472</span>
             </div>
           </div>
-          
+
           <div class="qr-code"></div>
         </div>
         <button class="wallet-btn"><i class="fab fa-apple"></i> Add to Apple Wallet</button>
@@ -206,7 +255,9 @@
     <div class="container simple-view">
       <div>
         <h2 class="logo" style="animation:none; text-shadow:none; font-size: 64px;">Five-Star Dining</h2>
-        <p>Savor gourmet dishes crafted by world-renowned chefs, delivered directly to your plush cinema seat. Our seasonal menu features exquisite culinary creations designed to perfectly complement your movie experience.</p>
+        <p>Savor gourmet dishes crafted by world-renowned chefs, delivered directly to your plush cinema seat. Our
+          seasonal menu features exquisite culinary creations designed to perfectly complement your movie experience.
+        </p>
       </div>
     </div>
   </section>
@@ -216,7 +267,8 @@
     <div class="container simple-view">
       <div>
         <h2 class="logo" style="animation:none; text-shadow:none; font-size: 64px;">Private Screenings</h2>
-        <p>Host the ultimate VIP event. Rent an entire theater for exclusive movie premieres, corporate presentations, or private gaming sessions on our massive silver screens.</p>
+        <p>Host the ultimate VIP event. Rent an entire theater for exclusive movie premieres, corporate presentations,
+          or private gaming sessions on our massive silver screens.</p>
       </div>
     </div>
   </section>
@@ -226,7 +278,8 @@
     <div class="container simple-view">
       <div>
         <h2 class="logo" style="animation:none; text-shadow:none; font-size: 64px;">Your Account</h2>
-        <p>View your upcoming reservations, past bookings, and manage your preferred payment methods. Sign in to access your Lumière Black Card benefits.</p>
+        <p>View your upcoming reservations, past bookings, and manage your preferred payment methods. Sign in to access
+          your Lumière Black Card benefits.</p>
         <button class="btn-primary" style="margin-top:32px;">Sign In</button>
       </div>
     </div>
@@ -235,4 +288,5 @@
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
 </body>
+
 </html>

@@ -2,7 +2,6 @@ const initialMovies = [
   {
     id: 'm1',
     title: "Lee Cronin's The Mummy",
-    genre: 'Supernatural Horror',
     rating: 'R',
     synopsis: "A journalist's young daughter disappears into the desert without a trace. Eight years later, the broken family is shocked when she is returned to them — but what should be a joyful reunion soon turns into a living nightmare as she begins to transform into something truly horrifying.",
     runtime: '115 min',
@@ -12,6 +11,7 @@ const initialMovies = [
     director: 'Lee Cronin',
     writer: 'Lee Cronin',
     status: 'now-showing',
+    genre: 'Horror, Thriller',
     accentColor: '#9b1c1c'
   },
   {
@@ -93,7 +93,7 @@ const initialMovies = [
   {
     id: 'm7',
     title: 'The Backrooms',
-    genre: 'Science Fiction, Horror',
+    genre: 'Sci-Fi, Horror',
     rating: 'R',
     synopsis: 'A therapist becomes entangled in a terrifying case when one of her patients vanishes without explanation — disappearing through a strange doorway in the basement of a furniture showroom into an infinite carpeted maze beyond reality. She must enter the unknown to save him.',
     runtime: '95 min',
@@ -141,7 +141,7 @@ const initialMovies = [
   {
     id: 'm10',
     title: 'Verity',
-    genre: 'Suspense, Thriller',
+    genre: 'Thriller, Suspense',
     rating: 'R',
     synopsis: 'A struggling writer is hired as a ghostwriter for renowned author Verity Crawford under mysterious circumstances, but her assignment takes a dark turn after she discovers chilling autobiographical notes. Faced with a series of deadly family secrets, she struggles to separate fiction from reality, while also blurring the lines with Verity\'s husband, Jeremy.',
     runtime: '120 min',

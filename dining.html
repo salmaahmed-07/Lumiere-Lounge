@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dining | Lumière Lounge</title>
+  <meta name="description" content="Explore the Lumière Lounge concession menu. Premium popcorn, hot drinks, cold drinks, slushies, snacks, and more.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/dining.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body id="dining-page-body">
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Lumière</a>
+      <button class="mobile-toggle" id="mobile-toggle">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="movies.html">Movies</a>
+        <a href="dining.html" class="active">Dining</a>
+        <a href="index.html#events">Private Events</a>
+        <a href="admin.html">Dashboard</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <header class="dining-hero">
+    <div class="dining-hero-overlay"></div>
+    <div class="container dining-hero-content">
+      <p class="dining-eyebrow">Concession Menu</p>
+      <h1 class="dining-hero-title">Savour <span class="gold-text">Every</span> Moment</h1>
+      <p class="dining-hero-sub">Artisanally crafted bites and beverages to elevate your cinematic experience</p>
+    </div>
+    <div class="dining-hero-scroll-hint">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </header>
+
+  <!-- Sticky Menu Nav -->
+  <div class="menu-sticky-nav" id="menu-sticky-nav">
+    <div class="container">
+      <div class="menu-nav-tabs" id="menu-nav-tabs">
+        <button class="menu-tab active" data-target="section-popcorn">
+          <i class="fas fa-circle"></i> Popcorn
+        </button>
+        <button class="menu-tab" data-target="section-hot">
+          <i class="fas fa-mug-hot"></i> Hot Drinks
+        </button>
+        <button class="menu-tab" data-target="section-cold">
+          <i class="fas fa-tint"></i> Cold Drinks
+        </button>
+        <button class="menu-tab" data-target="section-slushies">
+          <i class="fas fa-blender"></i> Slushies
+        </button>
+        <button class="menu-tab" data-target="section-snacks">
+          <i class="fas fa-cookie-bite"></i> Snacks &amp; Candy
+        </button>
+        <button class="menu-tab" data-target="section-dinein">
+          <i class="fas fa-utensils"></i> Dine-In
+        </button>
+        <button class="menu-tab" data-target="section-desserts">
+          <i class="fas fa-ice-cream"></i> Desserts
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Menu Content -->
+  <main class="dining-main">
+    <div class="container">
+
+      <!-- ===== SECTION 1: POPCORN ===== -->
+      <section class="menu-section" id="section-popcorn">
+        <div class="section-header">
+          <div class="section-icon-wrap">
+            <i class="fas fa-circle"></i>
+          </div>
+          <div>
+            <h2 class="section-title">Concession Menu</h2>
+            <p class="section-subtitle">Our signature popcorn in three irresistible flavours</p>
+          </div>
+        </div>
+
+        <div class="popcorn-grid">
+          <!-- Salt Popcorn -->
+          <div class="popcorn-card">
+            <div class="popcorn-card-header">
+              <div class="popcorn-icon">🍿</div>
+              <h3 class="popcorn-name">Salt Popcorn</h3>
+              <p class="popcorn-desc">Classic lightly salted popcorn, perfectly crisp</p>
+            </div>
+            <div class="popcorn-sizes">
+              <div class="size-pill">
+                <span class="size-label">S</span>
+                <span class="size-price">50 <small>LE</small></span>
+              </div>
+              <div class="size-pill">
+                <span class="size-label">M</span>
+                <span class="size-price">75 <small>LE</small></span>
+              </div>
+              <div class="size-pill featured">
+                <span class="size-label">L</span>
+                <span class="size-price">100 <small>LE</small></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cheese Popcorn -->
+          <div class="popcorn-card">
+            <div class="popcorn-card-header">
+              <div class="popcorn-icon">🧀</div>
+              <h3 class="popcorn-name">Cheese Popcorn</h3>
+              <p class="popcorn-desc">Rich cheddar dusted kernels with a savoury finish</p>
+            </div>
+            <div class="popcorn-sizes">
+              <div class="size-pill">
+                <span class="size-label">S</span>
+                <span class="size-price">70 <small>LE</small></span>
+              </div>
+              <div class="size-pill">
+                <span class="size-label">M</span>
+                <span class="size-price">95 <small>LE</small></span>
+              </div>
+              <div class="size-pill featured">
+                <span class="size-label">L</span>
+                <span class="size-price">120 <small>LE</small></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Caramel Popcorn -->
+          <div class="popcorn-card best-seller">
+            <div class="best-seller-badge">Best Seller</div>
+            <div class="popcorn-card-header">
+              <div class="popcorn-icon">🍯</div>
+              <h3 class="popcorn-name">Caramel Popcorn</h3>
+              <p class="popcorn-desc">Golden caramel glaze with a buttery sweet crunch</p>
+            </div>
+            <div class="popcorn-sizes">
+              <div class="size-pill">
+                <span class="size-label">S</span>
+                <span class="size-price">90 <small>LE</small></span>
+              </div>
+              <div class="size-pill">
+                <span class="size-label">M</span>
+                <span class="size-price">115 <small>LE</small></span>
+              </div>
+              <div class="size-pill featured">
+                <span class="size-label">L</span>
+                <span class="size-price">140 <small>LE</small></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 2: HOT DRINKS ===== -->
+      <section class="menu-section" id="section-hot">
+        <div class="section-header">
+          <div class="section-icon-wrap hot">
+            <i class="fas fa-mug-hot"></i>
+          </div>
+          <div>
+            <h2 class="section-title">Hot Drinks</h2>
+            <p class="section-subtitle">Expertly brewed to warm your evening</p>
+          </div>
+        </div>
+
+        <div class="menu-items-grid">
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Tea</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">30 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Anise</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">30 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Turkish Coffee</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">50 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Tea with Milk</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">50 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Espresso</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">65 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">French Coffee</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">70 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Double Turkish Coffee</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">70 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Double Espresso</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">80 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Espresso Macchiato</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">85 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Flat White</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">90 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Cappuccino</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">120 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Latte</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">125 <small>LE</small></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 3: COLD DRINKS ===== -->
+      <section class="menu-section" id="section-cold">
+        <div class="section-header">
+          <div class="section-icon-wrap cold">
+            <i class="fas fa-tint"></i>
+          </div>
+          <div>
+            <h2 class="section-title">Cold Drinks</h2>
+            <p class="section-subtitle">Refreshing beverages to cool you down</p>
+          </div>
+        </div>
+
+        <div class="menu-items-grid">
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Mineral Water</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">20 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Juice</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">30 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Sparkling Water</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">40 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Soft Drinks</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">45 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Red Bull</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">70 <small>LE</small></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 4: SLUSHIES ===== -->
+      <section class="menu-section" id="section-slushies">
+        <div class="section-header">
+          <div class="section-icon-wrap slush">
+            <i class="fas fa-blender"></i>
+          </div>
+          <div>
+            <h2 class="section-title">Slushies</h2>
+            <p class="section-subtitle">Icy, vibrant blends to keep you refreshed</p>
+          </div>
+        </div>
+
+        <div class="slushie-grid">
+          <div class="slushie-card mango">
+            <div class="slushie-icon">🥭</div>
+            <h3 class="slushie-name">Mango</h3>
+            <div class="slushie-price">70 <small>LE</small></div>
+          </div>
+          <div class="slushie-card orange">
+            <div class="slushie-icon">🍊</div>
+            <h3 class="slushie-name">Orange</h3>
+            <div class="slushie-price">70 <small>LE</small></div>
+          </div>
+          <div class="slushie-card pomegranate">
+            <div class="slushie-icon">🍇</div>
+            <h3 class="slushie-name">Pomegranate</h3>
+            <div class="slushie-price">80 <small>LE</small></div>
+          </div>
+          <div class="slushie-card redbull">
+            <div class="slushie-icon">⚡</div>
+            <h3 class="slushie-name">Red Bull</h3>
+            <div class="slushie-price">90 <small>LE</small></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 5: SNACKS & CANDY ===== -->
+      <section class="menu-section" id="section-snacks">
+        <div class="section-header">
+          <div class="section-icon-wrap snack">
+            <i class="fas fa-cookie-bite"></i>
+          </div>
+          <div>
+            <h2 class="section-title">Snacks &amp; Candy</h2>
+            <p class="section-subtitle">The perfect accompaniment to any feature</p>
+          </div>
+        </div>
+
+        <div class="menu-items-grid">
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Cheetos</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">25 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Chipsy Jumbo</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">35 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Cotton Candy</span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">40 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Chocolate <span class="item-note">(any kind)</span></span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">60 <small>LE</small></span>
+          </div>
+          <div class="menu-item">
+            <div class="item-info">
+              <span class="item-name">Pringles <span class="item-note">(small)</span></span>
+              <span class="item-dots"></span>
+            </div>
+            <span class="item-price">115 <small>LE</small></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 6: DINE-IN MENU ===== -->
+      <section class="menu-section" id="section-dinein">
+        <div class="section-header">
+          <div class="section-icon-wrap dinein">
+            <i class="fas fa-utensils"></i>
+          </div>
+          <div>
+            <h2 class="section-title">Dine-In Menu</h2>
+            <p class="section-subtitle">Freshly made to order, delivered straight to your seat</p>
+          </div>
+        </div>
+
+        <div class="dinein-grid">
+
+          <div class="dinein-card">
+            <div class="dinein-emoji">🍟</div>
+            <div class="dinein-info">
+              <h3 class="dinein-name">Fries</h3>
+            </div>
+            <div class="dinein-price">100 <small>LE</small></div>
+          </div>
+
+          <div class="dinein-card">
+            <div class="dinein-emoji">🧀</div>
+            <div class="dinein-info">
+              <h3 class="dinein-name">Cheese Fries</h3>
+            </div>
+            <div class="dinein-price">120 <small>LE</small></div>
+          </div>
+
+          <div class="dinein-card">
+            <div class="dinein-emoji">🌽</div>
+            <div class="dinein-info">
+              <h3 class="dinein-name">Nachos</h3>
+              <p class="dinein-desc">With cheese sauce</p>
+            </div>
+            <div class="dinein-price">150 <small>LE</small></div>
+          </div>
+
+          <div class="dinein-card">
+            <div class="dinein-emoji">🍝</div>
+            <div class="dinein-info">
+              <h3 class="dinein-name">Mozzarella Sticks</h3>
+            </div>
+            <div class="dinein-price">150 <small>LE</small></div>
+          </div>
+
+          <div class="dinein-card">
+            <div class="dinein-emoji">🥔</div>
+            <div class="dinein-info">
+              <h3 class="dinein-name">Loaded Fries</h3>
+            </div>
+            <div class="dinein-price">150 <small>LE</small></div>
+          </div>
+
+          <div class="dinein-card">
+            <div class="dinein-emoji">🍗</div>
+            <div class="dinein-info">
+              <h3 class="dinein-name">Chicken Strips</h3>
+              <p class="dinein-desc">5 pieces</p>
+            </div>
+            <div class="dinein-price">160 <small>LE</small></div>
+          </div>
+
+          <div class="dinein-card">
+            <div class="dinein-emoji">🌮</div>
+            <div class="dinein-info">
+              <h3 class="dinein-name">Loaded Nachos</h3>
+            </div>
+            <div class="dinein-price">180 <small>LE</small></div>
+          </div>
+
+          <div class="dinein-card">
+            <div class="dinein-emoji">🍔</div>
+            <div class="dinein-info">
+              <h3 class="dinein-name">Chicken Burger</h3>
+              <p class="dinein-desc">Tomatoes · Pickles · Lettuce · Onion · Cheese</p>
+            </div>
+            <div class="dinein-price">190 <small>LE</small></div>
+          </div>
+
+          <div class="dinein-card">
+            <div class="dinein-emoji">🌭</div>
+            <div class="dinein-info">
+              <h3 class="dinein-name">Hotdog</h3>
+            </div>
+            <div class="dinein-price">200 <small>LE</small></div>
+          </div>
+
+          <div class="dinein-card best-seller">
+            <div class="best-seller-badge">Chef's Pick</div>
+            <div class="dinein-emoji">🥩</div>
+            <div class="dinein-info">
+              <h3 class="dinein-name">Meat Burger</h3>
+              <p class="dinein-desc">Tomatoes · Pickles · Lettuce · Onion · Cheese</p>
+            </div>
+            <div class="dinein-price">200 <small>LE</small></div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+      <!-- ===== SECTION 7: DESSERTS ===== -->
+      <section class="menu-section" id="section-desserts">
+        <div class="section-header">
+          <div class="section-icon-wrap dessert">
+            <i class="fas fa-ice-cream"></i>
+          </div>
+          <div>
+            <h2 class="section-title">Desserts</h2>
+            <p class="section-subtitle">Sweet endings to a perfect cinematic night</p>
+          </div>
+        </div>
+
+        <div class="dessert-grid">
+
+          <div class="dessert-card">
+            <div class="dessert-emoji">🍦</div>
+            <div class="dessert-info">
+              <h3 class="dessert-name">Ice Cream</h3>
+              <p class="dessert-desc">Vanilla or Chocolate</p>
+            </div>
+            <div class="dessert-price">50 <small>LE</small></div>
+          </div>
+
+          <div class="dessert-card">
+            <div class="dessert-emoji">☕</div>
+            <div class="dessert-info">
+              <h3 class="dessert-name">Tiramisu Cup</h3>
+              <p class="dessert-desc">Small</p>
+            </div>
+            <div class="dessert-price">60 <small>LE</small></div>
+          </div>
+
+          <div class="dessert-card">
+            <div class="dessert-emoji">🍫</div>
+            <div class="dessert-info">
+              <h3 class="dessert-name">Freska</h3>
+              <p class="dessert-desc">With chocolate</p>
+            </div>
+            <div class="dessert-price">100 <small>LE</small></div>
+          </div>
+
+          <div class="dessert-card best-seller">
+            <div class="best-seller-badge">Fan Favourite</div>
+            <div class="dessert-emoji">🧇</div>
+            <div class="dessert-info">
+              <h3 class="dessert-name">Nutella Waffles</h3>
+            </div>
+            <div class="dessert-price">220 <small>LE</small></div>
+          </div>
+
+        </div>
+
+        <!-- Extra note -->
+        <div class="section-note">
+          <i class="fas fa-info-circle"></i>
+          Anything extra will be <strong>20 LE</strong>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer note -->
+  <footer class="dining-footer">
+    <div class="container">
+      <p>All prices are in Egyptian Pounds (EGP) and are inclusive of applicable taxes.</p>
+      <p class="dining-footer-brand">© 2025 Lumière Lounge · Cinema &amp; Dining</p>
+    </div>
+  </footer>
+
+  <script>
+    // Sync sticky nav position with actual navbar height
+    const navbar = document.getElementById('navbar');
+    const stickyNav = document.getElementById('menu-sticky-nav');
+
+    function syncStickyNavTop() {
+      if (navbar && stickyNav) {
+        const navH = navbar.offsetHeight;
+        stickyNav.style.top = navH + 'px';
+      }
+    }
+    syncStickyNavTop();
+    window.addEventListener('resize', syncStickyNavTop);
+
+    // Mobile menu toggle
+    const toggle = document.getElementById('mobile-toggle');
+    const nav = document.getElementById('nav-links');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        toggle.classList.toggle('active');
+      });
+    }
+
+    // Sticky nav tab click → smooth scroll
+    const tabs = document.querySelectorAll('.menu-tab');
+    const sections = document.querySelectorAll('.menu-section');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.dataset.target;
+        const target = document.getElementById(targetId);
+        if (target) {
+          const navbarHeight = navbar ? navbar.offsetHeight : 88;
+          const stickyNavHeight = stickyNav ? stickyNav.offsetHeight : 55;
+          const totalOffset = navbarHeight + stickyNavHeight + 24;
+          const top = target.getBoundingClientRect().top + window.scrollY - totalOffset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+
+    // Update active tab on scroll using IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          tabs.forEach(t => t.classList.remove('active'));
+          const activeTab = document.querySelector(`[data-target="${id}"]`);
+          if (activeTab) activeTab.classList.add('active');
+        }
+      });
+    }, { threshold: 0.25, rootMargin: '-100px 0px -60% 0px' });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Scroll hero arrow
+    const heroArrow = document.querySelector('.dining-hero-scroll-hint');
+    if (heroArrow) {
+      heroArrow.addEventListener('click', () => {
+        window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+      });
+    }
+  </script>
+</body>
+</html>

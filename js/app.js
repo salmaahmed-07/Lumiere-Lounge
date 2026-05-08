@@ -10,46 +10,15 @@ class App {
 
   init() {
     this.playIntro();
-    this.setupCursor();
-    this.setupParallax();
     this.renderMovies();
-    
-    // Add scroll event for navbar blur
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        nav.style.background = 'rgba(10, 14, 26, 0.95)';
-        nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.5)';
-      } else {
-        nav.style.background = 'rgba(10, 14, 26, 0.8)';
-        nav.style.boxShadow = 'none';
-      }
-    });
-  }
+    this.initMobileMenu();
 
-  setupCursor() {
-    const cursor = document.getElementById('cursor-glow');
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-    });
-
-    // Make cursor bigger on clickable elements
-    document.addEventListener('mouseover', (e) => {
-      if (e.target.closest('a') || e.target.closest('button') || e.target.closest('.seat') || e.target.closest('.movie-card')) {
-        cursor.style.width = '60px';
-        cursor.style.height = '60px';
-        cursor.style.background = 'radial-gradient(circle, rgba(240, 185, 66, 0.6) 0%, transparent 70%)';
-      }
-    });
-    
-    document.addEventListener('mouseout', (e) => {
-      if (e.target.closest('a') || e.target.closest('button') || e.target.closest('.seat') || e.target.closest('.movie-card')) {
-        cursor.style.width = '40px';
-        cursor.style.height = '40px';
-        cursor.style.background = 'radial-gradient(circle, rgba(201, 146, 42, 0.4) 0%, transparent 70%)';
-      }
-    });
+    // Handle deep linking from movies.html
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#book-')) {
+      const movieId = hash.replace('#book-', '');
+      setTimeout(() => this.selectMovie(movieId), 1000); // Wait for data/intro
+    }
   }
 
   playIntro() {
